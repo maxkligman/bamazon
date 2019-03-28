@@ -97,8 +97,15 @@ function purchaseConfirmation() {
         });
 
 };
-
+//CONNECT TO MYSQL AND UPDATE STOCK
 function confirmed() {
     console.log("Thank you for your purchase!  We will extract funds from your assets as necessary.")
+    //console.log(itemStock-purchaseQuantity)
+    // let newStock = itemStock-purchaseQuantity
+    // connection.query("UPDATE products SET ? WHERE ?",{stock: newStock}, {name: itemName},
+    // function (err) {
+    //     if (err) throw err;
+    //     console.log("stock updated!")
 
+    // });
 }

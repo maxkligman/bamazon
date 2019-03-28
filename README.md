@@ -1,2 +1,7 @@
 # bamazon
-connecting mysql and node
+connecting mysql and node and inquirer.
+
+
+
+
+

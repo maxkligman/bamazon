@@ -38,7 +38,7 @@ function productSelection() {
         })
         .then(function (answer) {
             // console.log(answer.itemID);
-            var query = "SELECT * FROM products WHERE ?";
+            let query = "SELECT * FROM products WHERE ?";
             connection.query(query, {
                 id: answer.itemID
             }, function (err, res) {
@@ -87,20 +87,18 @@ function purchaseConfirmation() {
             name: "confirmation"
         })
         .then(function (answer) {
-            switch (answer.action) {
-                case "Yes":
-                    confirmed();
-                    break;
-
-                case "No":
-                    connection.end();
-                    break;
+            //console.log(answer);
+            if (answer.confirmation === 'Yes') {
+                confirmed()
+            } else {
+                initiationSequence();
             }
 
         });
 
 };
 
+function confirmed() {
+    console.log("Thank you for your purchase!  We will extract funds from your assets as necessary.")
 
-
-
+}
